@@ -13,17 +13,17 @@ let
   
 
   nixpkgs = import <nixpkgs> { inherit config; };
-  inherit (nixpkgs) stdenv;
+  inherit (nixpkgs) stdenv haskellPackages;
   
   brutalRecipes = stdenv.mkDerivation {
     name = "brutal-recipes";
-    buildInput = [ nixpkgs.haskellPackages.hakyll ];
+    buildInput = [ haskellPackages.hakyll ];
     unpackPhase = "true";
     buildPhase = "true";
     installPhase = 
     ''
       mkdir -p $out/bin
-      # ${ nixpkgs.haskellPackages.hakyll} --version
+      # ${haskellPackages.hakyll}/bin/hakyll-init --help
       cp ${./index.html} $out/bin/index.html
     '';
   };
