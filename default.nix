@@ -23,7 +23,7 @@ let
     installPhase = 
     ''
       mkdir -p $out/bin
-      hakyll --version
+      # ${ nixpkgs.haskellPackages.hakyll} --version
       cp ${./index.html} $out/bin/index.html
     '';
   };
