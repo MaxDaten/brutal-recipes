@@ -1,30 +1,22 @@
 let
-  config = {
-    packageOverrides = nixpkgs: rec {
-      haskellPackages = nixpkgs.haskellPackages.override {
-        overrides = haskellPackagesNew: haskellPackagesOld: rec {
-          pandoc = haskellPackagesNew.callPackage ./pandoc.nix { };
-          hakyll = haskellPackagesNew.callPackage ./hakyll.nix { };
-        };
-      };
-    };
-  };
-
+  nixpkgs = import <nixpkgs> { };
+  inherit (nixpkgs) stdenv buildEnv haskellPackages;
   
-
-  nixpkgs = import <nixpkgs> { inherit config; };
-  inherit (nixpkgs) stdenv haskellPackages;
+  site-builder = haskellPackages.callPackage ./brutal-recipes.nix { };
   
-  brutalRecipes = stdenv.mkDerivation {
+  brutal-recipes = stdenv.mkDerivation rec {
     name = "brutal-recipes";
-    buildInput = [ haskellPackages.hakyll ];
-    unpackPhase = "true";
-    buildPhase = "true";
-    installPhase = 
-    ''
-      mkdir -p $out/bin
-      # ${haskellPackages.hakyll}/bin/hakyll-init --help
-      cp ${./index.html} $out/bin/index.html
-    '';
+    env = buildEnv {
+      name = name;
+      paths = buildInputs;
+      pathsToLink = [ "/share" "/bin" ];
+    };
+    src = ./.;
+    buildInputs = [
+      site-builder
+    ];
+    # FIXME find a way to get the binary 'site' of site-builder
+    # to the path
+    # builder = ./builder.sh;
   };
-in brutalRecipes
+in brutal-recipes
