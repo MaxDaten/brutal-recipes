@@ -1,8 +1,10 @@
+declare -xp
 source $stdenv/setup 
 
-PATH=${site-builder}/bin:$PATH
+set -e
 
-cd $src
+mkdir -p $out
+cp -R $src .
 
-site build 
-cp _site $out
+site build || ls -R
+cp -r _site $out
