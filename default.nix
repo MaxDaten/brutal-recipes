@@ -11,12 +11,11 @@ let
       paths = buildInputs;
       pathsToLink = [ "/share" "/bin" ];
     };
+    outputs = [ "_cache" "_site" "out" ];
     src = ./.;
     buildInputs = [
       site-builder
     ];
-    # FIXME find a way to get the binary 'site' of site-builder
-    # to the path
-    # builder = ./builder.sh;
+    builder = ./builder.sh;
   };
 in brutal-recipes
