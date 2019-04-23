@@ -1,10 +1,9 @@
-with import <nixpkgs> {};
-
+{stdenv, callPackage, buildEnv, haskellPackages, glibcLocales}:
 let
-  site-builder = haskellPackages.callPackage ./brutal-recipes.nix { };
+  site-builder = haskellPackages.callPackage ./generator { };
 
 in stdenv.mkDerivation rec {
-    name = "brutal-recipes";
+    name = "brutal-recipes.maxdaten.io";
     env = buildEnv {
       name = name;
       paths = buildInputs;
@@ -14,8 +13,15 @@ in stdenv.mkDerivation rec {
     buildInputs = [
       site-builder
     ];
+
+    LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
+    LANG = "en_US.UTF-8";
   
-    builder = "${bash}/bin/bash";
-    args = [ ./builder.sh ];
-    inherit tree;
+    phases = "unpackPhase buildPhase";
+
+    buildPhase = ''
+      site --verbose build
+      mkdir -p $out
+      cp -r _site/* $out
+    '';
 }

@@ -1,6 +1,6 @@
 { mkDerivation, base, hakyll, stdenv }:
 mkDerivation {
-  pname = "brutal-recipes";
+  pname = "site-generator";
   version = "0.1.0.0";
   src = ./.;
   isLibrary = false;
