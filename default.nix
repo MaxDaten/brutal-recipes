@@ -1,6 +1,6 @@
 {stdenv, callPackage, buildEnv, haskellPackages, glibcLocales}:
 let
-    site-builder = haskellPackages.callPackage ./generator { };
+    site-generator = haskellPackages.callPackage ./site-generator { };
 
 in stdenv.mkDerivation rec {
     name = "brutal-recipes.maxdaten.io";
@@ -11,7 +11,7 @@ in stdenv.mkDerivation rec {
     };
     src = ./.;
     buildInputs = [
-        site-builder
+        site-generator
     ];
 
     LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
