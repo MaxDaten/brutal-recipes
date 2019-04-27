@@ -25,7 +25,7 @@ nix-build release.nix
 trap restoreState EXIT ERR INT TERM
 
 # Go to gh page branch
-git fetch --all
+git fetch origin +refs/heads/master:refs/remotes/origin/master
 git branch
 git checkout -b master --track origin/master
 git checkout source .gitignore
