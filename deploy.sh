@@ -18,10 +18,11 @@ git stash
 git checkout source
 nix-build release.nix
 
+trap restoreState EXIT ERR INT TERM
+
 # Go to gh page branch
 git fetch --all
 git checkout -b master --track origin/master
-trap restoreState EXIT ERR INT TERM
 git checkout source .gitignore
 
 # Override page and commit
