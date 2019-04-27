@@ -11,7 +11,7 @@ main = do
     hakyll $ do
 
         let globalContext =
-                lastGeneralUpdateField "%B %e, %Y" now <>
+                lastGeneralUpdateField "%T - %B %e, %Y" now <>
                 defaultContext
 
         match "images/*" $ do
