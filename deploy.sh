@@ -8,11 +8,14 @@ set -x
 restoreState()  {
     git checkout source
     git branch -D master
-    git stash pop
+    if [ "$STASH" != "No local changes to save" ]; then
+		git stash pop
+	fi
 }
 
 # Save State and changes
-git stash
+STASH=`git stash`
+echo $STASH
 
 # Build page from source branch
 git checkout source
@@ -33,4 +36,3 @@ git commit -m "Deploy new page"
 
 # Push
 git push origin master:master
-
