@@ -9,7 +9,7 @@ in stdenv.mkDerivation rec {
         paths = buildInputs;
         pathsToLink = [ "/share" "/bin" ];
     };
-    src = ./.;
+    src = ./src;
     buildInputs = [
         site-generator
     ];
