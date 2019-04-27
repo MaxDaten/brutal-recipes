@@ -1,3 +1,6 @@
 language: nix
 nix: 2.2.2
-script: ./deploy.sh
+script:
+- |
+    nix-channel --update
+    ./deploy.sh
