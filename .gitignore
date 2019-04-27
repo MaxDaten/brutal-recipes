@@ -2,5 +2,5 @@ result
 _site
 _cache
 .vscode
-dist-newstyle
+dist*
 .ghc.environment.*
