@@ -13,9 +13,8 @@ nix-build release.nix
 
 # Go to gh page branch
 git fetch --all
-git checkout master
+git checkout -b master --track origin/master
 git checkout source .gitignore
-# git checkout -b master --track origin/master
 
 # Override page and commit
 cp -a result/. .
@@ -24,9 +23,9 @@ git add -A
 git commit -m "Deploy new page"
 
 # Push
-# git push origin master:master
+git push origin master:master
 
-# # Restoration
-# git checkout develop
-# git branch -D master
-# git stash pop
+# Restore state
+git checkout source
+git branch -D master
+git stash pop
