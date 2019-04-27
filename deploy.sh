@@ -7,10 +7,10 @@ set -x
 
 restoreState()  {
     git checkout source
-    git branch -D master
     if [ "$STASH" != "No local changes to save" ]; then
 		git stash pop
 	fi
+    git branch -D master
 }
 
 # Save State and changes
