@@ -13,6 +13,7 @@ restoreState()  {
     git branch -D master
 }
 
+git --version
 # Save State and changes
 STASH=`git stash`
 echo $STASH
@@ -24,7 +25,7 @@ nix-build release.nix
 trap restoreState EXIT ERR INT TERM
 
 # Go to gh page branch
-git fetch --all origin
+git fetch --all
 git branch
 git checkout -b master --track origin/master
 git checkout source .gitignore
