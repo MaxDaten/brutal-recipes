@@ -7,6 +7,9 @@ branches:
 before_install:
   - nix-channel --update
   - nix-env -upgrade --always
+# See: https://github.com/travis-ci/travis-ci/issues/7995#issuecomment-313169701
+before_deploy: sudo chown -R travis:travis /home/travis/
+
 script:
 - set -e
 - nix-build release.nix
@@ -16,11 +19,13 @@ script:
 - cp -av result/. .
 - git add -vA
 - git commit -m "[Travis] Deploy new page"
+# - git push origin master --force
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   target_branch: master
+  verbose: true
   on:
     branch: source
