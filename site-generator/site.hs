@@ -8,6 +8,13 @@ import           Data.Time
 main :: IO ()
 main = do
     now <- getCurrentTime
+    
+    let postCtx :: Context String
+        postCtx =
+            dateField "date" "%B %e, %Y" <>
+            lastGeneralUpdateField "%T - %B %e, %Y" now <>
+            defaultContext
+    
     hakyll $ do
 
         let globalContext =
@@ -31,8 +38,8 @@ main = do
         match "posts/*" $ do
             route $ setExtension "html"
             compile $ pandocCompiler
-                >>= loadAndApplyTemplate "templates/post.html"    postCtx
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= loadAndApplyTemplate "templates/post.html"    postCtx
                 >>= relativizeUrls
 
         create ["archive.html"] $ do
@@ -66,13 +73,6 @@ main = do
                     >>= relativizeUrls
 
         match "templates/*" $ compile templateBodyCompiler
-
-
---------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
 
 
 lastGeneralUpdateField :: String -> UTCTime -> Context a
