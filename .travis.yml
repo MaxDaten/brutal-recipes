@@ -6,16 +6,17 @@ branches:
 script:
 - set -e
 - nix-build release.nix
-- git fetch origin +refs/heads/*:refs/remotes/origin/*
+- git fetch origin +refs/heads/master:refs/remotes/origin/master
 - git checkout -B master origin/master
 - git checkout source .gitignore
-- cp -a result/. .
-- git add -A
+- cp -av result/. .
+- git add -vA
 - git commit -m "[Travis] Deploy new page"
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  target_branch: master
   on:
-    branch: master
+    branch: source
