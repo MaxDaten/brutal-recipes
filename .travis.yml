@@ -21,11 +21,11 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: false
-  keep_history: false
+  skip_cleanup: true
+  keep_history: true
   github_token: $GITHUB_TOKEN
   target_branch: master
-  local_dir: ./_site
+  local_dir: _site
   verbose: true
   on:
     branch: source
