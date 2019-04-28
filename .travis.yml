@@ -4,6 +4,16 @@ branches:
   only:
   - source
 script:
-- |
-    nix-channel --update
-    ./deploy.sh
+- nix-build release.nix
+- git checkout -B master origin/master
+- git checkout source .gitignore
+- cp -a result/. .
+- git add -A
+- git commit -m "[Travis] Deploy new page"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
