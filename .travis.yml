@@ -3,6 +3,10 @@ nix: 2.2.2
 branches:
   only:
   - source
+
+before_install:
+  - nix-channel --update
+  - nix-env -upgrade --always
 script:
 - set -e
 - nix-build release.nix
