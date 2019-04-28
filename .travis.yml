@@ -14,13 +14,15 @@ before_deploy: sudo chown -R travis:travis /home/travis/
 script:
 - set -e
 - nix-build release.nix
+- mkdir -p _site && cp -av result/. _site/.
 
 deploy:
   provider: pages
   skip_cleanup: true
+  keep_history: false
   github_token: $GITHUB_TOKEN
   target_branch: master
-  local_dir: ./result
+  local_dir: ./_site
   verbose: true
   on:
     branch: source
