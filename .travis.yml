@@ -21,7 +21,7 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  skip_cleanup: false
   keep_history: false
   github_token: $GITHUB_TOKEN
   target_branch: master
