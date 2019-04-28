@@ -14,12 +14,13 @@ before_install:
 script:
 - set -e
 - nix-build release.nix
-- mkdir -p _site && cp -av CNAME result/. _site/
+- mkdir -p _site && cp -av result/. _site/
 
 deploy:
   provider: pages
   skip_cleanup: true
   keep_history: false
+  fqdn: brutal-recipes.maxdaten.io
   github_token: $GITHUB_TOKEN
   target_branch: master
   local_dir: _site
