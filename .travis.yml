@@ -17,8 +17,7 @@ before_deploy: sudo chown -R travis:travis /home/travis/
 script:
 - set -e
 - nix-build release.nix
-- mkdir -p _site && cp -av result/. _site/.
-- cp CNAME _site/
+- mkdir -p _site && cp -av CNAME result/. _site/
 
 deploy:
   provider: pages
