@@ -14,19 +14,13 @@ before_deploy: sudo chown -R travis:travis /home/travis/
 script:
 - set -e
 - nix-build release.nix
-- git fetch origin +refs/heads/master:refs/remotes/origin/master
-- git checkout -B master origin/master
-- git checkout source .gitignore
-- cp -av result/. .
-- git add -vA
-- git commit -m "[Travis] Deploy new page"
-# - git push origin master --force
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   target_branch: master
+  local_dir: ./result
   verbose: true
   on:
     branch: source
