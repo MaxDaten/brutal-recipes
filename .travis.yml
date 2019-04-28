@@ -1,8 +1,10 @@
 language: nix
 nix: 2.2.2
+sudo: required
 cache:
   directories:
   - $NIX_PATH
+  - /nix
 branches:
   only:
   - source
