@@ -9,8 +9,8 @@ branches:
   - source
 
 before_install:
-  - nix-channel --update
-  - nix-env --upgrade --always
+- nix-channel --update
+- nix-env --upgrade --always
 # See: https://github.com/travis-ci/travis-ci/issues/7995#issuecomment-313169701
 before_deploy: sudo chown -R travis:travis /home/travis/
 
@@ -18,6 +18,7 @@ script:
 - set -e
 - nix-build release.nix
 - mkdir -p _site && cp -av result/. _site/.
+- cp CNAME _site/
 
 deploy:
   provider: pages
