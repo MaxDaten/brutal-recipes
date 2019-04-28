@@ -19,7 +19,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  keep_history: false
+  keep_history: true
   fqdn: brutal-recipes.maxdaten.io
   github_token: $GITHUB_TOKEN
   target_branch: master
