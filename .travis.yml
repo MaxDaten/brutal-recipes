@@ -3,6 +3,7 @@ nix: 2.2.2
 cache:
   directories:
   - $NIX_PATH
+  - /nix/store
 sudo: required
 branches:
   only:
