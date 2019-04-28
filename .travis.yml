@@ -3,7 +3,7 @@ nix: 2.2.2
 cache:
   directories:
   - $NIX_PATH
-# sudo: required
+sudo: required
 branches:
   only:
   - source
@@ -12,7 +12,9 @@ before_install:
 - nix-channel --update
 - nix-env --upgrade --always
 # See: https://github.com/travis-ci/travis-ci/issues/7995#issuecomment-313169701
-# before_deploy: sudo chown -R travis:travis /home/travis/
+before_deploy:
+- sudo chown -R travis:travis /home/travis/
+- sudo chown -R travis:travis /
 
 script:
 - set -e
