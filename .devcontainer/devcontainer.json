@@ -1,0 +1,5 @@
+{
+	"name": "Nixos 2.2",
+	"dockerFile": "Dockerfile",
+	"appPort": []
+}
