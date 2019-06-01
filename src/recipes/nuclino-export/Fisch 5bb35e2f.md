@@ -1,0 +1,5 @@
+* [Lachs aus der Pfanne](Lachs aus der Pfanne 774c40e1.md)
+* [Cajun-Lachs aus der Pfanne](Cajun-Lachs aus der Pfanne 1d5e9c40.md)
+* [Spiced Prawns](Spiced Prawns f1f3ac80.md)
+* [Gebackener Kabeljau in Walnusspanade](Gebackener Kabeljau in Walnusspanade edacf5e3.md)
+* [Panierte Schollenfilets mit Zitronenmelissen-Sahne-Sauce und Kräuterkartoffeln mit Speck](Panierte Schollenfilets mit Zitronenmelissen-Sahne-Sauce und Kräuterkartoffeln mit Speck 012639ab.md)
