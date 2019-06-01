@@ -7,4 +7,3 @@
 * [Tomatensauce  ](Tomatensauce 868cf8de.md)
 * [Spinat-Weißwein Sahne Sauce](Spinat-Weißwein Sahne Sauce 6dd56017.md)
 * [Norwegische Butter-Sauce (Sandefjordsmør)](Norwegische Butter-Sauce (Sandefjordsmør) d1c300a4.md)
-* [](Untitled item a8671780.md)
