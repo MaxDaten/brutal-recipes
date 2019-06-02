@@ -4,7 +4,7 @@ let
 
   inherit (nixpkgs) pkgs;
 
-  f = { mkDerivation, base, hakyll, stdenv }:
+  site-generator = { mkDerivation, base, hakyll, stdenv }:
       mkDerivation {
         pname = "site-generator";
         version = "0.1.0.0";
@@ -22,7 +22,7 @@ let
 
   variant = if doBenchmark then pkgs.haskell.lib.doBenchmark else pkgs.lib.id;
 
-  drv = variant (haskellPackages.callPackage f {});
+  drv = variant (haskellPackages.callPackage site-generator {});
 
 in
 
