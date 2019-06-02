@@ -19,6 +19,8 @@ in mkDerivation rec {
     ];
 
     LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
+    # optional for macos
+    # export PATH_LOCALE=${pkgs.darwin.locale}/share/locale
     LANG = "en_US.UTF-8";
 
     phases = [
