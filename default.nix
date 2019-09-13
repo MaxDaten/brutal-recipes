@@ -1,4 +1,4 @@
-{stdenv, callPackage, buildEnv, haskellPackages, glibcLocales}:
+{stdenv, callPackage, buildEnv, haskellPackages, glibcLocales, lib, buildPlatform}:
 let
     site-generator = haskellPackages.callPackage ./site-generator { };
 
@@ -18,7 +18,7 @@ in mkDerivation rec {
         site-generator
     ];
 
-    LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
+    LOCALE_ARCHIVE = lib.optionalString (buildPlatform.libc == "glibc") "${glibcLocales}/lib/locale/locale-archive";
     # optional for macos
     # export PATH_LOCALE=${pkgs.darwin.locale}/share/locale
     LANG = "en_US.UTF-8";
