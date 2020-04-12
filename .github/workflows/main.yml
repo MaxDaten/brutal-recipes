@@ -14,6 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Cache nix
+      id: cache-nix-store
+      uses: actions/cache@v1
+      with:
+        path: /nix/store/
+        key: ${{ runner.os }}-nix-store
+
     - uses: cachix/install-nix-action@v7
     - name: Build with cachix
       uses: cachix/cachix-action@v5
