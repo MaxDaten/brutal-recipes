@@ -27,21 +27,3 @@ jobs:
       with:
         name: pages
         path: result
-
-  deploy:
-    if: contains(github.ref, "source")
-    runs-on: ubuntu-latest
-    needs: [build]
-
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v1.0.0
-      with:
-        name: pages
-        path: result
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v1.3.0
-      with:
-        build_dir: result
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
