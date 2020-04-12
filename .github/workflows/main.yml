@@ -43,8 +43,10 @@ jobs:
         name: pages
         path: result
     - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v1.3.0
+      uses: crazy-max/ghaction-github-pages@v1.4.0
       with:
         build_dir: result
+        target_branch: master
+        fqdn: brutal-recipes.maxdaten.io
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
