@@ -1,7 +1,9 @@
 let
     bootstrap = import <nixpkgs> { };
 
-    nixpkgs = builtins.fromJSON (builtins.readFile ./nixpkgs-latest.json);
+    # Update via:
+    # `nix-prefetch-git https://github.com/NixOS/nixpkgs.git --rev refs/heads/master > nixpkgs-latest.json`
+    nixpkgs = builtins.fromJSON (builtins.readFile ./nixpkgs-19.09.json);
 
     src = bootstrap.fetchFromGitHub {
         owner = "NixOS";

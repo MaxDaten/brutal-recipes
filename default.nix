@@ -8,12 +8,15 @@ let
 
 in mkDerivation rec {
     name = "brutal-recipes.maxdaten.io";
+
     env = buildEnv {
         name = name;
         paths = buildInputs;
         pathsToLink = [ "/share" "/bin" ];
     };
+
     src = gitignoreSource ./src;
+
     buildInputs = [
         site-generator
     ];

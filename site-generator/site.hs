@@ -8,13 +8,13 @@ import           Data.Time
 main :: IO ()
 main = do
     now <- getCurrentTime
-    
+
     let postCtx :: Context String
         postCtx =
             dateField "date" "%B %e, %Y" <>
             lastGeneralUpdateField "%T - %B %e, %Y" now <>
             defaultContext
-    
+
     hakyll $ do
 
         let globalContext =
