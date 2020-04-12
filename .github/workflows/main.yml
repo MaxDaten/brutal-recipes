@@ -18,15 +18,6 @@ jobs:
     - name: Install Nix
       uses: cachix/install-nix-action@v7
 
-    - name: Install gh-actions cache for /nix/store
-      id: cache-nix-store
-      uses: actions/cache@v1.1.2
-
-      with:
-        path: /nix/store/
-        key: ${{ runner.os }}-nix-store
-
-
     - name: Build with cachix
       uses: cachix/cachix-action@v5
       with:
