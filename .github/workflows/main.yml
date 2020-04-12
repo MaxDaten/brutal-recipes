@@ -20,7 +20,8 @@ jobs:
 
     - name: Install gh-actions cache for /nix/store
       id: cache-nix-store
-      uses: actions/cache@v1
+      uses: actions/cache@v1.1.2
+
       with:
         path: /nix/store/
         key: ${{ runner.os }}-nix-store
