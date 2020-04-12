@@ -20,7 +20,7 @@ jobs:
         name: brutal-recipes
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-        nixBuildArgs: release.nix
+        file: release.nix
     - name: Upload pages
       uses: actions/upload-artifact@v1.0.0
       with:
