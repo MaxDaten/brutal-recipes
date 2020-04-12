@@ -31,3 +31,14 @@ jobs:
       with:
         name: pages
         path: result
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: [ build ]
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        name: pages
+        path: result
