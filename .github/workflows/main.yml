@@ -18,10 +18,9 @@ jobs:
     - uses: cachix/cachix-action@v5
       with:
         name: brutal-recipes
-        skipNixBuild: true
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix-build release.nix
+        nixBuildArgs: release.nix
     - name: Upload pages
       uses: actions/upload-artifact@v1.0.0
       with:
