@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  pull_request:
+    branches: [ source ]
+  push:
+    branches: [ source ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Nix
+      uses: cachix/install-nix-action@v7
+
+    - name: Build with cachix
+      uses: cachix/cachix-action@v5
+      with:
+        name: brutal-recipes
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        file: release.nix
+    
+    - name: Artifact pages
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: pages
+        path: result
+  deploy:
+    if: github.ref == 'refs/heads/source'
+    runs-on: ubuntu-latest
+    needs: [ build ]
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        name: pages
+        path: result
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.3.0
+      with:
+        build_dir: result

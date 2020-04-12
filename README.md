@@ -1,4 +1,4 @@
-# brutal-recipes [![Build Status](https://travis-ci.org/MaxDaten/brutal-recipes.svg?branch=source)](https://travis-ci.org/MaxDaten/brutal-recipes)
+# brutal-recipes ![CI](https://github.com/MaxDaten/brutal-recipes/workflows/CI/badge.svg)
 
 Recipe collection curated by Andy &amp; Jan, continuously delivered
 
