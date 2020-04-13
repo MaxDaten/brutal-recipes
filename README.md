@@ -1,4 +1,4 @@
-# brutal-recipes ![CI](https://github.com/MaxDaten/brutal-recipes/workflows/CI/badge.svg)
+# [brutal-recipes](https://brutal-recipes.maxdaten.io) ![CI](https://github.com/MaxDaten/brutal-recipes/workflows/CI/badge.svg)
 
 Recipe collection curated by Andy &amp; Jan, continuously delivered
 
