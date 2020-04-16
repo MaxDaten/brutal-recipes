@@ -5,3 +5,4 @@ Recipe collection curated by Andy &amp; Jan, continuously delivered
 ## References
 
 - https://brutalistwebsites.com/
+- http://kinja-labs.com/ingredient-cutter/
