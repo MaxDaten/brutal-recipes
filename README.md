@@ -1,7 +1,7 @@
 ---
 title: https://brutal-recipes.maxdaten.io
 ci: https://github.com/MaxDaten/brutal-recipes/workflows/CI
-authors: [maxdaten]
+authors: [https://github.com/maxdaten, https://github.com/Anghostdy]
 ---
 
 ![CI](https://github.com/MaxDaten/brutal-recipes/workflows/CI/badge.svg)
