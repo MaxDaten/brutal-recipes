@@ -47,6 +47,7 @@ jobs:
         with:
           build_dir: result
           target_branch: master
+          keep_history: 'true'
           fqdn: brutal-recipes.maxdaten.io
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
