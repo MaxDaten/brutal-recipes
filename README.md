@@ -1,12 +1,15 @@
 ---
-title: https://brutal-recipes.maxdaten.io
-ci: https://github.com/MaxDaten/brutal-recipes/workflows/CI
-authors: [https://github.com/maxdaten, https://github.com/Anghostdy]
+title: 'Brutal Recipes'
 ---
 
 ![CI](https://github.com/MaxDaten/brutal-recipes/workflows/CI/badge.svg)
 
 Recipe collection curated by Andy & Jan, continuously delivered and served hot.
+
+## Authors
+
+- [MaxDaten](https://github.com/maxdaten)
+- [Anghostdy](https://github.com/Anghostdy)
 
 ## Build & Development Environment
 
