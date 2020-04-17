@@ -8,7 +8,7 @@ authors: [https://github.com/maxdaten, https://github.com/Anghostdy]
 
 Recipe collection curated by Andy & Jan, continuously delivered and served hot.
 
-## Development Environment
+## Build & Development Environment
 
 This project uses [nix][nix] as an build and dependency infrastructure.
 Nix provides deterministic dependency resolution across multiple language ecosystems.
