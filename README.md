@@ -34,6 +34,7 @@ with recommended extensions in [.vscode/extensions.json](.vscode/extensions.json
 ## References
 
 - <https://www.uxbrutalism.com/>
+- <http://kinja-labs.com/ingredient-cutter/>
 
 [nix-macos-10.15]: https://github.com/NixOS/nix/issues/2925#issuecomment-604501661
 [nix]: https://nixos.org/nixpkgs/manual/
