@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "maxdaten",
+        "nixpkgs"
+    ],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
