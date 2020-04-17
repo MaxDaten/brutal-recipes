@@ -45,7 +45,12 @@ This follows a process implemented via github actions and git branches. While gi
 
 ### Git Branches
 
-Integration branch is `source`. It is the shared state for all contributors. Changes can be introduced here directly (preferred & encouraged) or via spike out branches in combination with pull request (PR). Every branch will be build by github actions, but only `source` will be deployed, if the build was successful.
+- `source`: Integration branch
+- `master`: Release branch
+
+`source` is the shared state for all contributors. Changes can be introduced here directly (preferred & encouraged) or via spike out branches in combination with pull request (PR) or merges on `source`.
+
+Every branch will be _build_ by github actions, but only `source` will be _deployed_ to `master`, if the _build_ was successful.
 
 Own spike out branches can be used for experiments or collecting async feedback in a PR. But it is preferred to discuss ideas first directly.
 
@@ -53,7 +58,7 @@ _But beware the **Peter Parker principle**_:
 
 > With great power there must also come great responsibility
 
-If you commit directly to the integration branch `source` and it breaks the build & deployment, it will break it for everyone which blocks everyone from working. So observe your changes and how they will evolve to a deployment and a public visible site. Be responsible.
+If you commit directly to the integration branch `source` and it breaks the build & deployment, it will break it for everyone which blocks everyone from working. So observe your changes and how they will evolve to a deployment and a public visible site. Be responsible. Revert your changes if necessary.
 
 ### Nix Infrastructure
 
