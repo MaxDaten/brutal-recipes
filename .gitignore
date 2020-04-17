@@ -1,7 +1,6 @@
 result
 _site
 _cache
-.vscode
 dist*
 .ghc.environment.*
 cabal.project.local*

@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "DavidAnson.vscode-markdownlint",
+      "EditorConfig.EditorConfig",
+      "shd101wyy.markdown-preview-enhanced"
+    ]
+  }
