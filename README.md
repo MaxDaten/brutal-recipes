@@ -31,6 +31,42 @@ Follow one of these solution mentioned [here][nix-macos-10.15] (recommended _sol
 Recommended editor ist [Visual Studio Code](https://marketplace.visualstudio.com/vscode)
 with recommended extensions in [.vscode/extensions.json](.vscode/extensions.json).
 
+## Project Organization
+
+To produce the static sites (html, css, js, etc) of brutal-recipes, a own binary executable tool `site-generator` is used.
+
+It's _input_ is the content in directory `./src`. Recipes are written in markdown format (pandoc flavor) and should follow some
+rules and structures (still has to be defined).
+Images and other created content can be included to some extend.
+
+It's _output_ is the set of static files to be deployed to the github pages service.
+
+This follows a process implemented via github actions and git branches. While github actions are doing the heavy work in building & executing the `site-generator` to generate the static site, the process of creating updates has to be follow by the content creators.
+
+### Git Branches
+
+Integration branch is `source`. It is the shared state for all contributors. Changes can be introduced here directly (preferred & encouraged) or via spike out branches in combination with pull request (PR). Every branch will be build by github actions, but only `source` will be deployed, if the build was successful.
+
+Own spike out branches can be used for experiments or collecting async feedback in a PR. But it is preferred to discuss ideas first directly.
+
+_But beware the **Peter Parker principle**_:
+
+> With great power there must also come great responsibility
+
+If you commit directly to the integration branch `source` and it breaks the build & deployment, it will break it for everyone which blocks everyone from working. So observe your changes and how they will evolve to a deployment and a public visible site. Be responsible.
+
+### Nix Infrastructure
+
+TBD
+
+### Site Generator
+
+TBD
+
+### Site Content
+
+TBD
+
 ## References
 
 - <https://www.uxbrutalism.com/>
