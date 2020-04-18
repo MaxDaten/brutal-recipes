@@ -75,6 +75,22 @@ TBD
 
 TBD
 
+## Work-Mode
+
+### Content Creation
+
+<!-- FIXME: how to create a new recipe -->
+<!-- FIXME: Markdown guidelines -->
+
+TBD
+
+### Content Presentation
+
+<!-- FIXME: `site-generator` rules -->
+<!-- FIXME: Adjusting templates -->
+
+TBD
+
 ## References
 
 - <https://www.uxbrutalism.com/>
