@@ -1,6 +1,6 @@
 {stdenv, callPackage, buildEnv, haskellPackages, glibcLocales, lib, buildPlatform}:
 let
-    site-generator = haskellPackages.callPackage ./site-generator { };
+    site-generator = haskellPackages.callPackage ./site-generator/site-generator.nix { };
 
     inherit (stdenv) mkDerivation;
     # gitignoreSource to respect .gitignore for nix builds
@@ -34,7 +34,7 @@ in mkDerivation rec {
     ];
 
     buildPhase = ''
-        site --verbose build
+        site-generator --verbose build
     '';
 
     installPhase = ''
