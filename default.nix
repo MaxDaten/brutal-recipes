@@ -2,8 +2,8 @@
 let
     site-generator = haskellPackages.callPackage ./site-generator { };
 
-    # gitignoreSource to respect .gitignore for nix builds
     inherit (stdenv) mkDerivation;
+    # gitignoreSource to respect .gitignore for nix builds
     inherit (import (builtins.fetchTarball "https://github.com/hercules-ci/gitignore/archive/master.tar.gz") { }) gitignoreSource;
 
 in mkDerivation rec {
