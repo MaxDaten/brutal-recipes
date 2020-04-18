@@ -1,11 +1,11 @@
 let
-    bootstrap = import <nixpkgs> { };
+    inherit (import <nixpkgs> {}) fetchFromGitHub;
 
     # Update via:
     # `nix-prefetch-git https://github.com/NixOS/nixpkgs-channels --rev refs/heads/master > nixpkgs-latest.json`
     nixpkgs = builtins.fromJSON (builtins.readFile ./nixpkgs-latest.json);
 
-    src = bootstrap.fetchFromGitHub {
+    src = fetchFromGitHub {
         owner = "NixOS";
         repo = "nixpkgs";
         inherit (nixpkgs) rev sha256;
