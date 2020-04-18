@@ -7,5 +7,5 @@
 ## New Structure Idea
 
 - (Sub)-Categories in folders with index files with links to "items"
-- index.md can referre relative to different items/categories
+- index.md can referrer relative to different items/categories
   - should be possible from everywhere
