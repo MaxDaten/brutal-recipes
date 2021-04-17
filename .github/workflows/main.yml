@@ -28,6 +28,7 @@ jobs:
         with:
           name: pages
           path: result.txt
+          if-no-files-found: error
   deploy:
     if: github.ref == 'refs/heads/source'
     runs-on: ubuntu-latest
