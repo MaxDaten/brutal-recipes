@@ -25,10 +25,10 @@ jobs:
           file: release.nix
 
       - name: Artifact pages
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v2
         with:
           name: pages
-          path: results/
+          path: result.txt
   deploy:
     if: github.ref == 'refs/heads/source'
     runs-on: ubuntu-latest
