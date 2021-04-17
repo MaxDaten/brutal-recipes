@@ -24,11 +24,6 @@ As a drop-in solution it is recommended to use Nixpkgs in your current environme
 
 You can just use it via _Windows Subsystem for Linux (2)_ with a (small?) performance sacrifice.
 
-### macOS since 10.15 (Catalina)
-
-You have to prepare the `/nix` root directory before installing Nixpkgs.
-Follow one of these solution mentioned [here][nix-macos-10.15] (recommended _solution 1_).
-
 ### Editor
 
 Recommended editor ist [Visual Studio Code](https://marketplace.visualstudio.com/vscode)
@@ -96,5 +91,4 @@ TBD
 - <https://www.uxbrutalism.com/>
 - <http://kinja-labs.com/ingredient-cutter/>
 
-[nix-macos-10.15]: https://github.com/NixOS/nix/issues/2925#issuecomment-604501661
-[nix]: https://nixos.org/nixpkgs/manual/
+[nix]: https://nixos.org/download.html
