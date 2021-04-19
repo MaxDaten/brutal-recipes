@@ -12,6 +12,8 @@ in mkDerivation rec {
         pathsToLink = [ "/share" "/bin" ];
     };
 
+    src = ./src;
+
     buildInputs = [
         site-generator
     ];
