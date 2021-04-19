@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: pages
-          path: result.txt
+          path: result
           if-no-files-found: error
   deploy:
     if: github.ref == 'refs/heads/source'
