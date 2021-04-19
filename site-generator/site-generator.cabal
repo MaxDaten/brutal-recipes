@@ -6,7 +6,7 @@ cabal-version:      >= 1.10
 executable site-generator
   main-is:          site-generator.hs
   build-depends:    base >= 4
-                  , hakyll >= 4.13 && < hakyll 4.14.0.0
+                  , hakyll >= 4.13 && < 4.14.0.0
                   , time >= 1.8
   ghc-options:      -threaded
   default-language: Haskell2010
