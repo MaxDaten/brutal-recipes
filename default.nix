@@ -3,9 +3,6 @@ let
     site-generator = haskellPackages.callPackage ./site-generator/site-generator.nix { };
 
     inherit (stdenv) mkDerivation;
-    # gitignoreSource to respect .gitignore for nix builds
-    inherit (import (builtins.fetchTarball "https://github.com/hercules-ci/gitignore/archive/master.tar.gz") { }) gitignoreSource;
-
 in mkDerivation rec {
     name = "brutal-recipes.maxdaten.io";
 
@@ -15,7 +12,7 @@ in mkDerivation rec {
         pathsToLink = [ "/share" "/bin" ];
     };
 
-    src = gitignoreSource ./src;
+    src = ./src;
 
     buildInputs = [
         site-generator
